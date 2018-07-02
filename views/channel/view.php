@@ -1,31 +1,18 @@
 <?php
 
-    \Yii::$app->view->registerMetaTag([
-    'name' => 'description',
-    'content' => 'Sobatnetizen.com adalah situs berita viral, unik, dan terupdate dikalangan netizen',
-    ]);
-    \Yii::$app->view->registerMetaTag([
-    'name' => 'keywords',
-    'content' => Yii::$app->name,
-    ]);
-
-
 use yii\helpers\Html;
-use app\models\Read;
-use yii\data\ActiveDataProvider;
 use yii\widgets\ListView;
+use yii\data\ActiveDataProvider;
+
 /* @var $this yii\web\View */
+/* @var $model app\models\Channel */
 
-$this->title = Yii::$app->name;
+$this->title = $model->channel;
+
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-index">
-
-   
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-2">
+<div class="channel-view">
+ <div class="col-lg-2">
                <!-- Begin: //adsensecamp.com/ -->
 <script src="//adsensecamp.com/show/?id=DM2R7Fi4okA%3D&cid=sO23aMPfjUo%3D&chan=ck9VvIa%2Foik%3D&type=4&title=3D81EE&text=000000&background=FFFFFF&border=000000&url=2BA94F" type="text/javascript">
 </script>
@@ -36,15 +23,13 @@ $this->title = Yii::$app->name;
     <img width="100%" src="public/img/left.png">
     <hr/>
             </div>
-
-
-            <div class="col-lg-6">
-
-
-                <?php 
+			
+			<div class="col-lg-6">
+    
+  <?php 
             
 $dataProvider = new ActiveDataProvider([
-    'query' => Read::find(),
+    'query' => app\models\Read::find()->where(['channel'=>$model->channel]),
     'sort'=> ['defaultOrder' => ['created_at'=>SORT_DESC]],
     'pagination' => [
         'pageSize' => 7,
@@ -65,25 +50,10 @@ $dataProvider = new ActiveDataProvider([
      
     ]);
             
-            ?>   
-
-
-
-        </div>
-        
-       
-
-
-
-
-
-            
-
-
-
-
-
-            <div class="col-lg-4">
+            ?>  
+    </div>
+	
+	<div class="col-lg-4">
                 
 
                 <!-- Begin: //adsensecamp.com/ -->
@@ -113,7 +83,7 @@ $dataProvider = new ActiveDataProvider([
 
 
             </div>
-        </div>
 
-    </div>
+  
+
 </div>

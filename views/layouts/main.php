@@ -41,7 +41,7 @@ AppAsset::register($this);
 $items = app\models\Channel::find()->orderBy(['id_channel'=>SORT_DESC])->all();
 $menuItems = [];
        foreach ($items as $key => $value) {
-                   $menuItems[] = ['label' => strtoupper($value['channel']), 'url' => ['channel/'.$value['channel']]];
+                   $menuItems[] = ['label' => strtoupper($value['channel']), 'url' => ['/'.$value['channel']]];
               }
 
  ?>

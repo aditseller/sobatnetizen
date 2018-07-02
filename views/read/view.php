@@ -57,16 +57,12 @@ foreach ($tag as $tagitem) {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="720" data-numposts="10"></div>
+<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="10"></div>
 
 </div>
 
 <div class="col-lg-4">
 
-     <!-- Begin: //adsensecamp.com/ -->
-<script src="//adsensecamp.com/show/?id=DM2R7Fi4okA%3D&cid=sO23aMPfjUo%3D&chan=ck9VvIa%2Foik%3D&type=5&title=3D81EE&text=000000&background=FFFFFF&border=000000&url=2BA94F" type="text/javascript">
-</script>
-<!-- End: //adsensecamp.com/ -->
     
     <h3 style="margin-top:0px">BERITA LAINNYA</h3>
         <?php
@@ -76,7 +72,7 @@ foreach ($tag as $tagitem) {
 
         ?>
       <div class="panel panel-default panel-body">
-                    <a href="read/<?= $moreRow->url ?>">
+                    <a href="<?= $moreRow->url ?>">
                 
                 <p class="col-md-12"></p>
                 

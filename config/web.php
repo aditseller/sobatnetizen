@@ -51,8 +51,10 @@ $config = [
             'rules' => [
 
                        'read/<id:\d+>' => 'read/view',
+                       'channel/<id:\d+>' => 'channel/view',
                        '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                        'read/<slug>' => 'read/slug',
+                       '<slug>' => 'channel/slug',
             ],
         ],
         
