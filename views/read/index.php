@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
             
                 <a href=read/'.$data->url.' style="color: #123456; text-decoration: none;"  onMouseOver="this.style.color="orangered"" onMouseOut="this.style.color="#123456"">
                 <p class="col-md-12"></p>
-                <img src=/idearoom/public/uploads/read/'.sha1($data->title).'.jpg width=100% >
+                <img src='.Yii::$app->params['assetsUrl'].'uploads/read/'.sha1($data->title).'.jpg width=100% >
                 <h4><b>'.$data->title.'</b></h4>
 				</a>  
         </div>

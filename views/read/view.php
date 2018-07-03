@@ -34,7 +34,7 @@ $this->title = $model->title;
     <h4 style="font-weight: bold"><?= Html::encode($this->title) ?></h4>
      <span class="text-left" style="font-size:0.9em; color:grey; font-weight: bold; margin-top:10px;"><i><span class="glyphicon glyphicon-time"></span> <?= date('j F Y H:i',strtotime($model->created_at)) ?></i></span> |
      <?= Html::a(strtoupper($model->channel),['/'.$model->channel],['class'=>'label label-warning']) ?> 
-    <img src="/idearoom/public/uploads/read/<?= sha1($model->title) ?>.jpg" width="100%" style="margin-top:10px;">
+    <img src="<?= Yii::$app->params['assetsUrl'] ?>uploads/read/<?= sha1($model->title) ?>.jpg" width="100%" style="margin-top:10px;">
     <p></p>
     <span style="font-size: 1.2em"><?= $model->content ?></span>
     <hr/>
@@ -57,7 +57,7 @@ foreach ($tag as $tagitem) {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="10"></div>
+<div class="fb-comments" data-href="<?= Yii::$app->params['siteUrl'] ?>read/<?= $model->url ?>" data-width="100%" data-numposts="10"></div>
 
 </div>
 
@@ -77,7 +77,7 @@ foreach ($tag as $tagitem) {
                 <p class="col-md-12"></p>
                 
                 <h5 class="col-md-7 text-left"><b><?= substr($moreRow->title, 0,50) ?>...</b></h5>
-                <img class="col-md-5 text-right" width="100%" src="/idearoom/public/uploads/read/<?= sha1($moreRow->title) ?>.jpg">
+                <img class="col-md-5 text-right" width="100%" src="<?= Yii::$app->params['assetsUrl'] ?>uploads/read/<?= sha1($moreRow->title) ?>.jpg">
 
                 <span class="col-md-6 text-left" style="font-size:0.9em; font-weight: bold; margin-top:10px;"><i><span class="glyphicon glyphicon-time"></span> <?= date('j F Y H:i',strtotime($moreRow->created_at)) ?></i></span>
                 

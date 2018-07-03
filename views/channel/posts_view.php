@@ -12,7 +12,7 @@ use yii\helpers\Html;
                 <a href="read/<?= $model->url ?>" style="color: #123456; text-decoration: none;"  onMouseOver="this.style.color='orangered'"
    onMouseOut="this.style.color='#123456'">
                 <p class="col-md-12"></p>
-                <img src="/idearoom/public/uploads/read/<?= sha1($model->title) ?>.jpg" width="100%">
+                <img src="<?= Yii::$app->params['assetsUrl'] ?>uploads/read/<?= sha1($model->title) ?>.jpg" width="100%">
                 <h4><b><?= $model->title ?></b></h4>
 				</a>  
               
