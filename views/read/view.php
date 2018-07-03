@@ -33,7 +33,7 @@ $this->title = $model->title;
 
     <h4 style="font-weight: bold"><?= Html::encode($this->title) ?></h4>
      <span class="text-left" style="font-size:0.9em; color:grey; font-weight: bold; margin-top:10px;"><i><span class="glyphicon glyphicon-time"></span> <?= date('j F Y H:i',strtotime($model->created_at)) ?></i></span> |
-     <?= Html::a(strtoupper($model->channel),['channel/'.$model->channel],['class'=>'label label-warning']) ?> 
+     <?= Html::a(strtoupper($model->channel),['/'.$model->channel],['class'=>'label label-warning']) ?> 
     <img src="/idearoom/public/uploads/read/<?= sha1($model->title) ?>.jpg" width="100%" style="margin-top:10px;">
     <p></p>
     <span style="font-size: 1.2em"><?= $model->content ?></span>
@@ -43,7 +43,7 @@ $this->title = $model->title;
 <?php
 $tag = explode(',',$model->tag);
 foreach ($tag as $tagitem) {
-    echo Html::a('#'.$tagitem,['tag/'.$tagitem],['class'=>'label label-default','style'=>'font-size:0.9em']).' ';
+    echo Html::a('#'.$tagitem,['/tag?ReadSearch[tag]='.$tagitem],['class'=>'label label-default','style'=>'font-size:0.9em']).' ';
 }
  ?>
  <hr/>

@@ -31,9 +31,6 @@ $this->title = Yii::$app->name;
 </script>
 <!-- End: //adsensecamp.com/ -->
 
-                
-
-    <img width="100%" src="public/img/left.png">
     <hr/>
             </div>
 

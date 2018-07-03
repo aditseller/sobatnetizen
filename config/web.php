@@ -54,6 +54,7 @@ $config = [
                        'channel/<id:\d+>' => 'channel/view',
                        '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                        'read/<slug>' => 'read/slug',
+					   'tag' => 'read/index',
                        '<slug>' => 'channel/slug',
             ],
         ],

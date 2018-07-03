@@ -5,7 +5,7 @@ use yii\helpers\Html;
  <div class="panel panel-default panel-body">
                     
 
-                <?= Html::a(strtoupper($model->channel),['channel/'.$model->channel],['class'=>'col-md-4 btn btn-sm btn-warning text-left','style'=>'font-size:0.9em; font-weight:bold;']) ?>
+                <?= Html::a(strtoupper($model->channel),['/'.$model->channel],['class'=>'col-md-4 btn btn-sm btn-warning text-left','style'=>'font-size:0.9em; font-weight:bold;']) ?>
 
                 <span class="col-md-4 text-right" style="font-size:0.9em; font-weight: bold; margin-top:10px;"><i><span class="glyphicon glyphicon-time"></span> <?= date('j F Y H:i',strtotime($model->created_at)) ?></i></span>
             

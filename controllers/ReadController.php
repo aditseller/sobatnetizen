@@ -49,6 +49,21 @@ class ReadController extends Controller
      return $this->render('404',['exception'=>Yii::$app->errorHandler->exception]);
    }
  }
+ 
+  /**
+     * Lists all Read models.
+     * @return mixed
+     */
+    public function actionIndex()
+    {
+        $searchModel = new ReadSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
 
     /**
      * Displays a single Read model.
