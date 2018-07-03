@@ -77,6 +77,14 @@ $menuItems = [];
     </div>
 </footer>
 
+<?php 
+if (substr($_SERVER['HTTP_HOST'], 0, 4) !== 'www.' || @$_SERVER["HTTPS"] !== "on") {
+    header('Location: '.Yii::$app->params['siteUrl'].$_SERVER['REQUEST_URI']); 
+    exit;
+}
+?>
+
+
 <?php $this->endBody() ?>
 </body>
 </html>
