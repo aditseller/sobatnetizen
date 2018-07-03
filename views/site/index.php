@@ -6,7 +6,7 @@
     ]);
     \Yii::$app->view->registerMetaTag([
     'name' => 'keywords',
-    'content' => Yii::$app->name,
+    'content' => Yii::$app->name.', Sobatnetizen, sobat, netizen, berita, warganet, internet, kabar, harian, entertainment, news, gaya hidup, hits, musik, budaya, travel, kuliner, viral, listicle, unik, terupdate, indonesia, situs',
     ]);
 
 
