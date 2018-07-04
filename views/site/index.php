@@ -25,7 +25,7 @@ $this->title = Yii::$app->name;
     <div class="body-content">
 
         <div class="row">
-            <div class="col-lg-2">
+            <div class="col-lg-2 hide-on-mobile">
                <!-- Begin: //adsensecamp.com/ -->
 <script src="//adsensecamp.com/show/?id=DM2R7Fi4okA%3D&cid=sO23aMPfjUo%3D&chan=ck9VvIa%2Foik%3D&type=4&title=3D81EE&text=000000&background=FFFFFF&border=000000&url=2BA94F" type="text/javascript">
 </script>
@@ -80,7 +80,7 @@ $dataProvider = new ActiveDataProvider([
 
 
 
-            <div class="col-lg-4">
+            <div class="col-lg-4 hide-on-mobile">
                 
 
                 <!-- Begin: //adsensecamp.com/ -->
