@@ -23,6 +23,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\data\ActiveDataProvider;
+use yii\widgets\ListView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Read */
@@ -65,26 +67,38 @@ foreach ($tag as $tagitem) {
 
     
     <h3 style="margin-top:0px">BERITA LAINNYA</h3>
-        <?php
 
-        $more = app\models\Read::find()->where(['NOT LIKE','id_read',$model->id_read])->orderBy(['created_at'=>SORT_DESC])->all();
-        foreach ($more as $key => $moreRow) {
 
-        ?>
-      <div class="panel panel-default panel-body">
-                    <a href="<?= $moreRow->url ?>">
-                
-                <p class="col-md-12"></p>
-                
-                <h5 class="col-md-7 text-left"><b><?= substr($moreRow->title, 0,50) ?>...</b></h5>
-                <img class="col-md-5 text-right" width="100%" src="<?= Yii::$app->params['assetsUrl'] ?>uploads/read/<?= sha1($moreRow->id_read) ?>.jpg">
 
-                <span class="col-md-6 text-left" style="font-size:0.9em; font-weight: bold; margin-top:10px;"><i><span class="glyphicon glyphicon-time"></span> <?= date('j F Y H:i',strtotime($moreRow->created_at)) ?></i></span>
-                
-             </a>   
+                <?php 
+            
+$dataProvider = new ActiveDataProvider([
+    'query' => app\models\Read::find()->where(['NOT LIKE','id_read',$model->id_read]),
+    'sort'=> ['defaultOrder' => ['created_at'=>SORT_DESC]],
+    'pagination' => [
+        'pageSize' => 7,
+    ],
+]);
+            echo ListView::widget([
+     'dataProvider' => $dataProvider,
+     'itemOptions' => ['class' => 'item'],
+     'itemView' => 'morepost',
+     'summary'=>'',
+     'pager' => [
+     'class' => \kop\y2sp\ScrollPager::className(),
+     'triggerOffset' => 5,
+     'triggerTemplate' => '<center><a style="cursor: pointer" class="btn btn-block btn-default">Load More....</a></center>',
+     'noneLeftText'=>'Kamu Sudah Up to Date, Guys!'
+     ],
+     
+     
+    ]);
+            
+            ?> 
 
-        </div>
-        <?php } ?>
+
+
+        
 </div>
 
 
